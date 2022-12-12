@@ -2,10 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Web3 from "web3";
 
-// components
-
-import Navbar from "components/Navbars/AuthNavbar.js";
-
 export default function Landing() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const [web3,setWeb3] = React.useState()
@@ -19,12 +15,12 @@ export default function Landing() {
         setWeb3(web3)
         const accounts = await web3.eth.getAccounts()
         setAddress(accounts[0])
-        console.log(accounts)
+        window.location.href = '/admin/dashboard'
       } catch (err) {
         console.log(err)
       }
     } else {
-      console.log("install metamask")
+      alert("Warning: Install Metamask")
     }
   }
 
