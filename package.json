@@ -1,8 +1,7 @@
 {
-  "name": "notus-nextjs",
-  "homepage": "https://demos.creative-tim.com/notus-nextjs",
+  "name": "travel-ui",
   "version": "1.1.0",
-  "description": "Notus NextJS - A free Tailwind CSS, NextJS and React Ui Kit and Admin by Creative Tim.",
+  "description": "Travel Document Management using QR Code and Blockchain",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
