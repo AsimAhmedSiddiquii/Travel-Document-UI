@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
+import { store } from "store";
+import { Provider } from "react-redux";
 
 import PageChange from "components/PageChange/PageChange.js";
 
@@ -53,7 +55,9 @@ export default class MyApp extends App {
           <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
         </Head>
         <Layout>
-          <Component {...pageProps} />
+          <Provider store={store}>
+            <Component {...pageProps} />
+          </Provider>
         </Layout>
       </React.Fragment>
     );
