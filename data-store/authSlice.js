@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
     loggenIn: false,
@@ -9,6 +9,30 @@ const initialState = {
     phoneno: '',
     aadharno: ''
 }
+
+export const signUpUser = createAsyncThunk('signupuser', async(body) => {
+    const res = await fetch("",{
+        method: 'POST',
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(body)
+    })
+    return await res.json();
+})
+
+export const signInUser = createAsyncThunk('signinuser', async(body) => {
+    const res = await fetch("",{
+        method: 'POST',
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(body)
+    })
+    return await res.json();
+})
+
+
 
 export const authSlice = createSlice({
     name: 'auth',
