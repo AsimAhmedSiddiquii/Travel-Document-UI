@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUpUser } from "data-store/authSlice";
+import { useRouter } from "next/router";
 // layout for page
 
 import Auth from "layouts/Auth.js";
@@ -15,10 +16,12 @@ export default function Register() {
   const [password,setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const registerHandler = () => {
     console.log(fullName,email,phoneno,aadharno,password);
     dispatch(signUpUser({fullName,email,phoneno,aadharno,password}));
+    router.push('/auth/login');
   }
 
   return (

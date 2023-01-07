@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect} from "react";
+import { useDispatch } from "react-redux";
+import { signInUser } from "data-store/authSlice";
+import { useRouter } from "next/router";
 // layout for page
 
 import Auth from "layouts/Auth.js";
@@ -9,9 +11,24 @@ export default function Login() {
 
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+  const[isAuthenticated,setIsAuthenticated] = useState(false);
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  useEffect(() => {
+    //console.log(isAuthenticated);
+    const authStatus = localStorage.getItem("userData");
+    console.log(authStatus);
+    if(authStatus !== null) {
+      router.push('/admin/dashboard');
+    }
+  },[]);
 
   const loginHandler = () => {
     console.log(email,password);
+    dispatch(signInUser({email,password}));
+    console.log(isAuthenticated);
   }
 
   return (
