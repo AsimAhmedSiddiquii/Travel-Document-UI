@@ -4,8 +4,23 @@ export default function HeaderStats() {
   return (
     <>
       {/* Header */}
-      <div className="relative mt-32 flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-800 border-0">
-        
+      
+
+      <div className="relative mt-32 flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">  
+       <div className="px-4 mt-34 md:px-10 mx-auto w-full">
+          <div>
+
+          <div className="w-full lg:w-12/12 px-4 text-center mt-2">
+            <label className="block text-lg mb-3">Scan QR Code to verify documents</label>
+          </div>
+          <div className="w-full lg:w-12/12 px-4 text-center mt-2 mb-6">
+            <img src="/img/sample.png" className="text-center" width={120} />
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-800 border-0">  
        <div className="px-4 mt-34 md:px-10 mx-auto w-full">
           <div>
 
@@ -59,7 +74,6 @@ export default function HeaderStats() {
                   Upload Documents
                 </button>
           </div>
-
         </div>
       </div>
     </>

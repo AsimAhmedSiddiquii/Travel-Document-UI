@@ -3160,7 +3160,7 @@ select {
 }
 
 .text-center {
-  text-align: center;
+  text-align: -webkit-center;
 }
 
 .text-right {

@@ -47,8 +47,6 @@ export const signInUser = (body) => {
     }
 }
 
-
-
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
